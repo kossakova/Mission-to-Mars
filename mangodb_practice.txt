@@ -1,0 +1,61 @@
+
+(PythonData) C:\Users\zkoss>mongo
+MongoDB shell version v4.2.17
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("8b318d5e-4ded-4c5a-b053-c617e5e8ee77") }
+MongoDB server version: 4.2.17
+Server has startup warnings:
+2021-10-15T20:41:38.820-0500 I  CONTROL  [initandlisten]
+2021-10-15T20:41:38.820-0500 I  CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-10-15T20:41:38.820-0500 I  CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-10-15T20:41:38.820-0500 I  CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+> use practicedb
+switched to db practicedb
+> db
+practicedb
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> db
+practicedb
+> show collections
+> db.zoo.insert({name: 'Cleo', species: 'jaguar', age: 12, hobbies: ['sleeping', 'eating', 'climbing']})
+WriteResult({ "nInserted" : 1 })
+>
+> db.zoo.insert({name: 'Banzai', species: 'fox', age: 1, hobbies: ['sleeping', 'eating', 'playing']})
+WriteResult({ "nInserted" : 1 })
+> db.zoo.insert({name: 'Doc', species: 'leo', age: 35, hobbies: ['sleeping', 'eating', 'hunting']})
+WriteResult({ "nInserted" : 1 })
+> db.zoo.insert({name: 'Mok', species: 'rat', age: 9, hobbies: ['sleeping', 'eating', 'running']})
+WriteResult({ "nInserted" : 1 })
+> db.zoo.insert({name: 'Kiki', species: 'cat', age: 19, hobbies: ['sleeping', 'eating', 'cuddling']})
+WriteResult({ "nInserted" : 1 })
+> show collections
+zoo
+> db.zoo.find()
+{ "_id" : ObjectId("616c8f9359dc3262884e63e6"), "name" : "Cleo", "species" : "jaguar", "age" : 12, "hobbies" : [ "sleeping", "eating", "climbing" ] }
+{ "_id" : ObjectId("616c8ff859dc3262884e63e7"), "name" : "Banzai", "species" : "fox", "age" : 1, "hobbies" : [ "sleeping", "eating", "playing" ] }
+{ "_id" : ObjectId("616c90e459dc3262884e63e8"), "name" : "Doc", "species" : "leo", "age" : 35, "hobbies" : [ "sleeping", "eating", "hunting" ] }
+{ "_id" : ObjectId("616c90eb59dc3262884e63e9"), "name" : "Mok", "species" : "rat", "age" : 9, "hobbies" : [ "sleeping", "eating", "running" ] }
+{ "_id" : ObjectId("616c90f659dc3262884e63ea"), "name" : "Kiki", "species" : "cat", "age" : 19, "hobbies" : [ "sleeping", "eating", "cuddling" ] }
+> db.zoo.remove({name: 'Cleo'})
+WriteResult({ "nRemoved" : 1 })
+> db.zoo.drop()
+true
+> db.dropDatabase()
+{ "dropped" : "practicedb", "ok" : 1 }
+> ^C
+bye
