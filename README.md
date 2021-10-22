@@ -9,6 +9,7 @@ We wrote an automated script to gather all the information to be displayed on th
 - Python, 
 - MongoDB, 
 - Flask, 
+- Jupyter Notebook,
 - BeautifulSoup, 
 - Splender
 
