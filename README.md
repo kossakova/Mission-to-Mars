@@ -11,7 +11,7 @@ We wrote an automated script to gather all the information to be displayed on th
 - Flask, 
 - Jupyter Notebook,
 - BeautifulSoup, 
-- Splender
+- Splinter
 
 
 ![Mission-to-Mars](https://github.com/kossakova/Mission-to-Mars/blob/main/Mission-to-Mars.png)
